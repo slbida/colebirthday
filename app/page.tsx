@@ -297,9 +297,12 @@ export default function BirthdayWall() {
 
       {/* Header */}
       <div className="text-center mb-6 pt-8">
-        <h1 className="text-6xl md:text-7xl font-bold pokemon-title mb-2">
-          Happy Birthday Cole!
-        </h1>
+        <img 
+          src="/title.png" 
+          alt="Happy Birthday Cole!" 
+          className="mx-auto mb-2 max-w-full h-auto"
+          style={{ filter: 'drop-shadow(4px 4px 8px rgba(0,0,0,0.3))' }}
+        />
         <p className="text-lg text-green-800 handwritten">
           coded by @s7brinas
         </p>
