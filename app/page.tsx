@@ -16,7 +16,21 @@ export default function BirthdayWall() {
   const [bouncingBalls, setBouncingBalls] = useState<number[]>([])
   const [isPlaying, setIsPlaying] = useState(false)
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
   const messagesPerPage = 15
+
+  // Mobile detection
+  useEffect(() => {
+    const checkMobile = () => {
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                           window.innerWidth < 768
+      setIsMobile(isMobileDevice)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   // Photo slideshow - Cole's photos!
   const colePhotos = [
@@ -157,6 +171,29 @@ export default function BirthdayWall() {
       audio.play().catch(console.error)
       setIsPlaying(true)
     }
+  }
+
+  // Mobile blocking screen
+  if (isMobile) {
+    return (
+      <div className="min-h-screen bg-[#c8d6b0] flex flex-col items-center justify-center p-8">
+        <div className="bg-white rounded-3xl p-8 shadow-2xl text-center max-w-md">
+          <div className="text-6xl mb-4">🖥️</div>
+          <h1 className="text-3xl font-bold text-[#4A90E2] mb-4 handwritten">
+            Desktop Only!
+          </h1>
+          <p className="text-lg text-gray-700 mb-6 handwritten">
+            Cole's birthday website is designed for desktop computers only. 
+          </p>
+          <p className="text-base text-gray-600 handwritten">
+            Please visit this site on a computer or laptop to experience all the interactive features, animations, and birthday fun! 🎂
+          </p>
+          <div className="mt-6 text-sm text-gray-500">
+            Made with ❤️ by @s7brinas
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (
