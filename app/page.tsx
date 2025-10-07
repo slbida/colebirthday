@@ -219,8 +219,8 @@ export default function BirthdayWall() {
       ))}
 
       {/* Photo Slideshow - Positioned in upper area */}
-      <div className="hidden md:block absolute top-44 z-30" style={{left: '400px'}}>
-        <div className="w-50 h-50 rounded-full overflow-hidden shadow-lg border-4 border-white transform rotate-3 hover:rotate-0 transition-transform duration-300">
+      <div className="hidden md:block absolute top-30 z-30" style={{left: '250px'}}>
+        <div className="w-45 h-45 rounded-full overflow-hidden shadow-lg border-4 border-white transform rotate-3 hover:rotate-0 transition-transform duration-300">
           <img
             src={colePhotos[currentPhotoIndex]}
             alt={`Cole photo ${currentPhotoIndex + 1}`}
