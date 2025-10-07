@@ -219,8 +219,8 @@ export default function BirthdayWall() {
       ))}
 
       {/* Photo Slideshow - Positioned in upper area */}
-      <div className="hidden md:block absolute top-32 z-30" style={{left: '150px'}}>
-        <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg border-4 border-white transform rotate-3 hover:rotate-0 transition-transform duration-300">
+      <div className="hidden md:block absolute top-44 z-30" style={{left: '400px'}}>
+        <div className="w-50 h-50 rounded-full overflow-hidden shadow-lg border-4 border-white transform rotate-3 hover:rotate-0 transition-transform duration-300">
           <img
             src={colePhotos[currentPhotoIndex]}
             alt={`Cole photo ${currentPhotoIndex + 1}`}
@@ -232,8 +232,8 @@ export default function BirthdayWall() {
 
       {/* Animated Tennis Racket - Right side */}
       <div 
-        className="hidden md:block absolute top-32 z-30 cursor-pointer" 
-        style={{right: '150px'}}
+        className="hidden md:block absolute top-44 z-30 cursor-pointer" 
+        style={{right: '400px'}}
         onClick={triggerTennisAnimation}
       >
         <div className="relative">
